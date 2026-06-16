@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import { ImageBackground } from "react-native";
 
-import { AppProvider } from 'providers';
-import { RootNavigator } from 'navigation';
-import { ImageBackground } from 'react-native';
-import bg from './app/assets/images/bg.png';
+import { AppProvider } from "providers";
+import { RootNavigator } from "navigation";
+
+import bg from "./src/assets/images/bg.png";
 
 const App = () => {
   return (

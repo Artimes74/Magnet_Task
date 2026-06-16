@@ -1,14 +1,14 @@
-import { createFilteredTabs } from 'features';
+import { createFilteredTabs } from "../../../src/features";
 
-describe('createFilteredTabs', () => {
+describe("createFilteredTabs", () => {
   const mates = [
-    { id: 1, name: 'Alex', isVip: true },
-    { id: 2, name: 'Jordan', isVip: false },
+    { id: 1, name: "Alex", isVip: true },
+    { id: 2, name: "Jordan", isVip: false },
   ];
 
-  it('returns all tabs', () => {
+  it("returns all tabs", () => {
     const tabs = createFilteredTabs({
-      searchText: '',
+      searchText: "",
       vipOnly: false,
       mates,
       requests: [],
@@ -18,9 +18,9 @@ describe('createFilteredTabs', () => {
     expect(tabs[0].data).toHaveLength(2);
   });
 
-  it('filters vip users', () => {
+  it("filters vip users", () => {
     const tabs = createFilteredTabs({
-      searchText: '',
+      searchText: "",
       vipOnly: true,
       mates,
       requests: [],
@@ -28,12 +28,12 @@ describe('createFilteredTabs', () => {
     });
 
     expect(tabs[0].data).toHaveLength(1);
-    expect(tabs[0].data[0].name).toBe('Alex');
+    expect(tabs[0].data[0].name).toBe("Alex");
   });
 
-  it('filters search text', () => {
+  it("filters search text", () => {
     const tabs = createFilteredTabs({
-      searchText: 'alex',
+      searchText: "alex",
       vipOnly: false,
       mates,
       requests: [],

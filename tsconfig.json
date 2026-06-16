@@ -3,7 +3,7 @@
   "compilerOptions": {
     "types": ["jest"],
     "ignoreDeprecations": "6.0",
-    "baseUrl": "./app",
+    "baseUrl": "src",
     "paths": {
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],

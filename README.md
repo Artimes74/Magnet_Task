@@ -48,7 +48,7 @@ Reusable component architecture including:
 
 🏗️ Project Structure
 
-app/
+src/
 ├── components/
 │ ├── atom/
 │ ├── molecule/
