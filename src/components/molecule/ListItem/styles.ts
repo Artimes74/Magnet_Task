@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { padding, radius, size } from "theme";
+import { Colors, padding, radius, size } from "theme";
 
 const styles = StyleSheet.create({
   container: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    color: "#FFFFFF",
+    color: Colors.text.primary,
     fontSize: 15,
     fontWeight: "500",
   },
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
 
   underlay: {
-    color: "rgba(255,255,255,0.06)",
+    color: Colors.overlay.light,
   },
 });
 

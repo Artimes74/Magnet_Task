@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Text, TouchableHighlight, View } from "react-native";
 
-import { gap, size } from "theme";
+import { Colors, gap, size } from "theme";
 import { MagnetIcon } from "components";
 
 import type { ListItemProps } from "./types";
@@ -54,7 +54,7 @@ const ListItem = ({
           {hasIconInTitle && (
             <MagnetIcon
               name="badge-check-2"
-              color="#007AFF"
+              color={Colors.chip.text}
               size={size.x4}
               style={{
                 marginLeft: gap.x1,
@@ -71,7 +71,7 @@ const ListItem = ({
               <MagnetIcon
                 name="eye-icon"
                 size={size.x5}
-                color="#FFFFFF"
+                color={Colors.text.primary}
                 onPress={onPressMore}
               />
             ) : null}

@@ -1,11 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
+import { Colors } from "theme";
 
 export const customTabBarStyles = StyleSheet.create({
   wrapper: {
-    position: 'absolute',
+    position: "absolute",
     height: 78,
-    flexDirection: 'row',
-    alignItems: 'flex-end',
+    flexDirection: "row",
+    alignItems: "flex-end",
     gap: 14,
   },
 
@@ -13,20 +14,20 @@ export const customTabBarStyles = StyleSheet.create({
     width: 58,
     height: 58,
     borderRadius: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   tab: {
     flex: 1,
     margin: 5,
     borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   activeTab: {
-    backgroundColor: '#C58BFF',
+    backgroundColor: Colors.button.primaryPressed,
   },
 });
 
@@ -35,25 +36,25 @@ export const tabGradientShellStyles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 20,
-    backgroundColor: '#120C0C',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: Colors.background.tertiary,
+    justifyContent: "center",
+    alignItems: "center",
   },
   groupShell: {
     flex: 2,
     height: 58,
-    flexDirection: 'row',
+    flexDirection: "row",
     borderRadius: 16,
-    backgroundColor: '#120C0C',
+    backgroundColor: Colors.background.tertiary,
   },
   gradientLayer: {
-    position: 'absolute',
-    overflow: 'hidden',
+    position: "absolute",
+    overflow: "hidden",
   },
 
   groupGradientTop: {
     height: 58,
-    width: '100%',
+    width: "100%",
     borderRadius: 19,
     top: -1.5,
     left: -2.8,
@@ -61,7 +62,7 @@ export const tabGradientShellStyles = StyleSheet.create({
 
   groupGradientBottom: {
     height: 58,
-    width: '100%',
+    width: "100%",
     borderRadius: 19,
     top: 1.5,
     left: 2.3,
@@ -84,13 +85,13 @@ export const tabGradientShellStyles = StyleSheet.create({
   },
   groupBackground: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: '#120C0C',
+    backgroundColor: Colors.background.tertiary,
     borderRadius: 16,
   },
 
   centerBackground: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: '#120C0C',
+    backgroundColor: Colors.background.tertiary,
     borderRadius: 20,
   },
 });

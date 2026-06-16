@@ -1,6 +1,8 @@
 import React from "react";
 import { ActivityIndicator, Pressable, Text, View } from "react-native";
 
+import { Colors } from "theme";
+
 import Icon from "../Icon";
 import { IButtonProps } from "./types";
 import styles from "./styles";
@@ -23,7 +25,8 @@ const MagnetButton = ({
   isLoading = false,
   testID,
 }: IButtonProps) => {
-  const indicatorColor = type === "Fill" ? "#FFFFFF" : "#A85CFF";
+  const indicatorColor =
+    type === "Fill" ? Colors.text.primary : Colors.button.primary;
 
   const buttonStyles = styles(type, disabled, style);
 
@@ -39,7 +42,11 @@ const MagnetButton = ({
           <Icon
             name={leftIconName}
             size={leftIconSize ?? 24}
-            color={disabled ? "#777777" : leftIconColor ?? "#FFFFFF"}
+            color={
+              disabled
+                ? Colors.text.disabled
+                : leftIconColor ?? Colors.text.primary
+            }
           />
         ) : null}
         {isLoading && type !== "Text" ? (
@@ -54,7 +61,11 @@ const MagnetButton = ({
           <Icon
             name={rightIconName}
             size={rightIconSize ?? 24}
-            color={disabled ? "#777777" : rightIconColor ?? "#FFFFFF"}
+            color={
+              disabled
+                ? Colors.text.disabled
+                : rightIconColor ?? Colors.text.primary
+            }
           />
         ) : null}
       </View>

@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-import { gap } from "../../../theme";
+import { Colors, gap } from "theme";
 
 const styles = (disabled: boolean, loading: boolean) => {
   return StyleSheet.create({
     container: {
-      backgroundColor: "rgba(0,0,0,0)",
+      backgroundColor: "transparent",
       zIndex: 3,
     },
     gradient: {
@@ -20,7 +20,7 @@ const styles = (disabled: boolean, loading: boolean) => {
       gap: gap.x2,
     },
     title: {
-      color: disabled || loading ? "#777777" : "#ffffff",
+      color: disabled || loading ? Colors.text.disabled : Colors.text.primary,
     },
   });
 };

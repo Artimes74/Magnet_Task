@@ -1,25 +1,27 @@
-import React from 'react';
-import { View, type ViewStyle } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import React from "react";
+import { View, type ViewStyle } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
 
-import { tabGradientShellStyles } from './styles';
+import { Colors } from "theme";
 
-const BORDER_COLORS = ['#FFFFFF0D', '#120C0C'];
+import { tabGradientShellStyles } from "./styles";
+
+const BORDER_COLORS = ["#FFFFFF0D", Colors.background.tertiary];
 
 type Props = {
   children: React.ReactNode;
-  variant?: 'group' | 'center';
+  variant?: "group" | "center";
   height?: number;
   size?: number;
 };
 
 const TabGradientShell = ({
   children,
-  variant = 'group',
+  variant = "group",
   height = 58,
   size = 72,
 }: Props) => {
-  const isCenter = variant === 'center';
+  const isCenter = variant === "center";
 
   const shellStyle: ViewStyle[] = isCenter
     ? [
@@ -67,7 +69,7 @@ const TabGradientShell = ({
         tabGradientShellStyles.gradientLayer,
         {
           height,
-          width: '100%',
+          width: "100%",
           borderRadius: height * 0.32,
           top: -1.5,
           left: -2.3,
@@ -89,7 +91,7 @@ const TabGradientShell = ({
         tabGradientShellStyles.gradientLayer,
         {
           height,
-          width: '100%',
+          width: "100%",
           borderRadius: height * 0.32,
           top: 1.5,
           left: 2.3,

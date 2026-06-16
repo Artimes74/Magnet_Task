@@ -18,6 +18,7 @@ import {
 import { useAppDispatch } from "store";
 
 import styles from "./styles";
+import { Colors } from "theme/colors";
 
 const LoginScreen = () => {
   const [loginError, setLoginError] = useState<string | null>(null);
@@ -86,7 +87,7 @@ const LoginScreen = () => {
                   clearErrors("email"),
                     setValue("email", "", {
                       shouldDirty: true,
-                      shouldValidate: false,
+                      shouldValidate: true,
                     });
                 }}
               />
@@ -116,7 +117,7 @@ const LoginScreen = () => {
                   clearErrors("password");
                   setValue("password", "", {
                     shouldDirty: true,
-                    shouldValidate: false,
+                    shouldValidate: true,
                   });
                 }}
               />
@@ -127,11 +128,10 @@ const LoginScreen = () => {
               <MagnetButton
                 type="Text"
                 title={loginError}
-                style={styles.textButtonStyle}
                 titleStyle={styles.errorTitleStyle}
                 leftIconName="triangle-exclamation"
                 leftIconSize={20}
-                leftIconColor="#F24822"
+                leftIconColor={Colors.status.error}
               />
             )}
             <MagnetButton

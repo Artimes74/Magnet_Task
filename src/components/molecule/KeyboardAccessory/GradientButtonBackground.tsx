@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import Svg, { Defs, RadialGradient, Rect, Stop } from "react-native-svg";
 
+import { Colors } from "theme";
 import type { IGradientButtonBackgroundProps } from "./types";
 
 const GradientButtonBackground = ({
@@ -20,7 +21,7 @@ const GradientButtonBackground = ({
             ry="140%"
           >
             <Stop offset="0%" stopColor="#2A2B30" />
-            <Stop offset="100%" stopColor="#1A1B1E" />
+            <Stop offset="100%" stopColor={Colors.background.elevated} />
           </RadialGradient>
         ) : (
           <RadialGradient
@@ -31,7 +32,7 @@ const GradientButtonBackground = ({
             ry="230%"
           >
             <Stop offset="40%" stopColor="#230F36" />
-            <Stop offset="100%" stopColor="#A85CFF" />
+            <Stop offset="100%" stopColor={Colors.button.primary} />
           </RadialGradient>
         )}
       </Defs>

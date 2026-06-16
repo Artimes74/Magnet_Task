@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { gap, padding, radius, size } from "theme";
+import { Colors, gap, padding, radius, size } from "theme";
 
 const styles = StyleSheet.create({
   container: { flex: 1, paddingTop: size.x3 },
@@ -10,16 +10,16 @@ const styles = StyleSheet.create({
   SearchBarEndComponentContainer: {
     flexDirection: "row",
     borderRadius: radius.x7,
-    backgroundColor: "#007AFF1A",
+    backgroundColor: Colors.chip.text,
     justifyContent: "center",
     alignItems: "center",
     padding: padding.x3,
     gap: gap.x3,
   },
   vipBackgroundColor: {
-    backgroundColor: "#007AFF",
+    backgroundColor: Colors.chip.background,
   },
-  vipText: { color: "white" },
+  vipText: { color: Colors.text.primary },
   wrapper: {
     flex: 1,
     flexGrow: 1,

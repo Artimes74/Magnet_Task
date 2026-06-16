@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { padding, size } from "theme";
+import { Colors, padding, size } from "theme";
 
 const styles = StyleSheet.create({
   container: {
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   title: {
     flex: 1,
     textAlign: "center",
-    color: "#FFFFFF",
+    color: Colors.text.primary,
     fontSize: 18,
     fontWeight: "600",
   },

@@ -1,14 +1,16 @@
-import React from 'react';
-import { Pressable } from 'react-native';
-import createIconSetFromIcoMoon from 'react-native-vector-icons/lib/create-icon-set-from-icomoon';
+import React from "react";
+import { Pressable } from "react-native";
+import createIconSetFromIcoMoon from "react-native-vector-icons/lib/create-icon-set-from-icomoon";
 
-import icoMoonConfig from './selection.json';
-import { IIconProps } from './types';
+import { Colors } from "theme";
+
+import icoMoonConfig from "./selection.json";
+import { IIconProps } from "./types";
 
 const BaseIcon = createIconSetFromIcoMoon(
   icoMoonConfig,
-  'MagnetIcon',
-  'MagnetIcon.ttf',
+  "MagnetIcon",
+  "MagnetIcon.ttf",
 );
 
 const Icon = ({
@@ -17,7 +19,7 @@ const Icon = ({
   disabled = false,
   style,
   onPress,
-  color = '#777777',
+  color = Colors.text.disabled,
 }: IIconProps) => {
   const iconElement = (
     <BaseIcon name={name} size={size} color={color} style={style} />
