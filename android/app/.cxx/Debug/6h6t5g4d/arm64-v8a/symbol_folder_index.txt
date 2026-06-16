@@ -1,0 +1,1 @@
+/Users/artimesgerami/Documents/dev/reactnative/InterviewsTask/MagnetTask/android/app/build/intermediates/cxx/Debug/6h6t5g4d/obj/arm64-v8a
