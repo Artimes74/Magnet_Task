@@ -10,13 +10,13 @@
 		0C80B921A6F3F58F76C31292 /* libPods-MagnetTask.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MagnetTask.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		35B1F3448296EE2CD9E1175A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		39D0AC98543A4620B1E6C93E /* MagnetIcon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031F0AEE21524A6A8E967895 /* MagnetIcon.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		E4764780343049D8927A1492 /* MagnetIcon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A2B3295AC6742368ADC4A4B /* MagnetIcon.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A2B3295AC6742368ADC4A4B /* MagnetIcon.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MagnetIcon.ttf; path = ../app/assets/fonts/MagnetIcon.ttf; sourceTree = "<group>"; };
+		031F0AEE21524A6A8E967895 /* MagnetIcon.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MagnetIcon.ttf; path = ../src/assets/fonts/MagnetIcon.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MagnetTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagnetTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MagnetTask/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MagnetTask/Info.plist; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		646433C1FA7A442490CCCCB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0A2B3295AC6742368ADC4A4B /* MagnetIcon.ttf */,
+				031F0AEE21524A6A8E967895 /* MagnetIcon.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -173,7 +173,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				35B1F3448296EE2CD9E1175A /* PrivacyInfo.xcprivacy in Resources */,
-				E4764780343049D8927A1492 /* MagnetIcon.ttf in Resources */,
+				39D0AC98543A4620B1E6C93E /* MagnetIcon.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
