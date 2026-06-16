@@ -1,42 +1,43 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
+import { Colors } from "theme";
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: "100%",
   },
 
   tabsRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
 
   tab: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: 12,
   },
 
   label: {
     fontSize: 13,
-    color: 'rgba(255,255,255,0.5)',
+    color: Colors.segmentedControl.activeLabel,
   },
 
   activeLabel: {
-    color: '#FFFFFF',
-    fontWeight: '600',
+    color: Colors.text.primary,
+    fontWeight: "600",
   },
 
   indicatorTrack: {
-    width: '100%',
+    width: "100%",
     height: 2,
-    backgroundColor: 'rgba(255,255,255,0.08)',
-    overflow: 'hidden',
+    backgroundColor: Colors.indicator.track,
+    overflow: "hidden",
   },
 
   indicator: {
     height: 2,
-    backgroundColor: '#C58BFF',
+    backgroundColor: Colors.button.primaryPressed,
   },
 });
 

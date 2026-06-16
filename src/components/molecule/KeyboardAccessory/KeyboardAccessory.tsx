@@ -3,6 +3,7 @@ import { ActivityIndicator, Pressable, Text, View } from "react-native";
 import { KeyboardAccessoryView } from "react-native-keyboard-accessory";
 
 import { MagnetIcon, MagnetButton } from "components";
+import { Colors } from "theme";
 
 import GradientButtonBackground from "./GradientButtonBackground";
 import { IKeyboardAccessoryProps } from "./types";
@@ -43,12 +44,12 @@ const KeyboardAccessory = (props: IKeyboardAccessoryProps) => {
           <GradientButtonBackground disabled={disabled} />
           <View style={customButtonStyle.gradientTextAndIconContainer}>
             {isLoading ? (
-              <ActivityIndicator color={"#FFFFFF"} />
+              <ActivityIndicator color={Colors.text.primary} />
             ) : (
               <>
                 <MagnetIcon
                   name="arrow-right-to-bracket"
-                  color={disabled ? "#777777" : "#ffffff"}
+                  color={disabled ? Colors.text.disabled : Colors.text.primary}
                 />
                 <Text style={customButtonStyle.title}>{title}</Text>
               </>

@@ -17,7 +17,7 @@ import { useFriends } from "features";
 
 import styles from "./styles";
 import { FriendsPagerItem, FriendsPagerKey } from "./types";
-import { AVATAR_SIZE, gap, padding, size } from "theme";
+import { AVATAR_SIZE, Colors, gap, padding, size } from "theme";
 
 const ChatListScreen = () => {
   const [searchText, setSearchText] = useState("");
@@ -91,7 +91,11 @@ const ChatListScreen = () => {
                 setVipOnly((prv) => !prv);
               }}
             >
-              <MagnetIcon name="badge-check" size={size.x4} color="white" />
+              <MagnetIcon
+                name="badge-check"
+                size={size.x4}
+                color={Colors.text.primary}
+              />
               <Text style={styles.vipText}>VIP</Text>
             </Pressable>
           }
@@ -105,7 +109,11 @@ const ChatListScreen = () => {
               <MagnetSwipeableListItem
                 enabled={item.section === "Mates"}
                 RightAction={
-                  <MagnetIcon name="more" size={size.x1} color="#FFFFFF" />
+                  <MagnetIcon
+                    name="more"
+                    size={size.x1}
+                    color={Colors.text.primary}
+                  />
                 }
               >
                 <MagnetListItem
@@ -142,13 +150,13 @@ const ChatListScreen = () => {
                       <MagnetIcon
                         name="message-circle-lines"
                         size={size.x6}
-                        color="#C29EFF"
+                        color={Colors.button.primaryLight}
                       />
                     ) : item.section === "Request" ? (
                       <View>
                         <Text
                           style={{
-                            color: "#777777",
+                            color: Colors.text.disabled,
                             textAlign: "right",
                             marginBottom: gap.x1,
                             marginRight: gap.x1,
@@ -161,11 +169,11 @@ const ChatListScreen = () => {
                             type="Text"
                             style={{
                               borderWidth: 1,
-                              borderColor: "#C29EFF",
+                              borderColor: Colors.button.primaryLight,
                             }}
                             title="Decline"
                             titleStyle={{
-                              color: "#FFFFFF",
+                              color: Colors.text.primary,
                               paddingVertical: padding.x1,
                               paddingHorizontal: padding.x3,
                             }}
@@ -173,11 +181,11 @@ const ChatListScreen = () => {
                           <MagnetButton
                             type="Text"
                             style={{
-                              backgroundColor: "#C29EFF",
+                              backgroundColor: Colors.button.primaryLight,
                             }}
                             title="Accept"
                             titleStyle={{
-                              color: "#000000",
+                              color: Colors.background.primary,
                               paddingVertical: padding.x1,
                               paddingHorizontal: padding.x3,
                             }}
@@ -202,11 +210,14 @@ const ChatListScreen = () => {
                               width: AVATAR_SIZE["list"] * 0.1,
                               height: AVATAR_SIZE["list"] * 0.1,
                               borderRadius: AVATAR_SIZE["list"] * 0.1,
-                              backgroundColor: "#C29EFF",
+                              backgroundColor: Colors.button.primaryLight,
                             }}
                           />
                           <Text
-                            style={{ color: "#777777", marginRight: gap.x1 }}
+                            style={{
+                              color: Colors.text.disabled,
+                              marginRight: gap.x1,
+                            }}
                           >
                             13:20 AM
                           </Text>
@@ -215,11 +226,11 @@ const ChatListScreen = () => {
                           type="Text"
                           style={{
                             borderWidth: 1,
-                            borderColor: "#C29EFF",
+                            borderColor: Colors.button.primaryLight,
                           }}
                           title="Cancel Request"
                           titleStyle={{
-                            color: "#FFFFFF",
+                            color: Colors.text.primary,
                             paddingVertical: padding.x1,
                             paddingHorizontal: padding.x3,
                           }}

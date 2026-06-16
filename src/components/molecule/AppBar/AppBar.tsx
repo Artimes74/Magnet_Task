@@ -2,6 +2,7 @@ import React from "react";
 import { Pressable, Text, View } from "react-native";
 
 import { MagnetIcon } from "components";
+import { Colors } from "theme";
 
 import styles from "./styles";
 import type { IAppBarProps } from "./types";
@@ -20,7 +21,11 @@ const AppBar = ({
       <View style={styles.side}>
         {LeftComponent ?? (
           <Pressable onPress={onPressLeftIcon} hitSlop={12}>
-            <MagnetIcon name={leftIconName} size={24} color="#FFFFFF" />
+            <MagnetIcon
+              name={leftIconName}
+              size={24}
+              color={Colors.text.primary}
+            />
           </Pressable>
         )}
       </View>

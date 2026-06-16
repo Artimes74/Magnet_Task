@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import { TextInput, View } from "react-native";
 
-import { size } from "../../../theme";
+import { size } from "theme";
 
 import Icon from "../Icon/Icon";
 

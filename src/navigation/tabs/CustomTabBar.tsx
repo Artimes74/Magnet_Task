@@ -10,6 +10,7 @@ import { useAppDispatch } from "store";
 import TabGradientShell from "./TabGradientShell";
 import { customTabBarStyles } from "./styles";
 import { TabRouteName } from "./tabs.navigation.types";
+import { Colors } from "theme";
 
 const tabIcons: Record<TabRouteName, IconKeys> = {
   Groups: "users-alt-2",
@@ -105,7 +106,7 @@ const CustomTabBar = ({ state, navigation }: BottomTabBarProps) => {
         <MagnetIcon
           name={tabIcons[routeName]}
           size={iconSize}
-          color={isFocused ? "#160B20" : "#FFFFFF"}
+          color={isFocused ? "#160B20" : Colors.text.primary}
         />
       </Pressable>
     );
@@ -144,7 +145,7 @@ const CustomTabBar = ({ state, navigation }: BottomTabBarProps) => {
             <MagnetIcon
               name={tabIcons.Add}
               size={centerIconSize}
-              color="#FFFFFF"
+              color={Colors.text.primary}
             />
           </View>
         </TabGradientShell>

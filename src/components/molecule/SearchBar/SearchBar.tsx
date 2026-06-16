@@ -1,7 +1,7 @@
 import { View } from "react-native";
 
 import { MagnetInput } from "components";
-import { radius } from "theme";
+import { Colors, radius } from "theme";
 
 import React from "react";
 import styles from "./styles";
@@ -27,7 +27,7 @@ const SearchBar = ({
           style={{ borderRadius: radius.x10, height: 40 }}
           leftIconName="search-alt"
           rightIconName="filter-list"
-          rightIconColor="#FFFFFF"
+          rightIconColor={Colors.text.primary}
           placeholder="Search"
           onChangeText={onChangeText}
         />

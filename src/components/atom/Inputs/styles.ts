@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { gap, padding, radius, size } from "../../../theme";
+import { Colors, gap, padding, radius, size } from "theme";
 
 import ITextInput from "./types";
 
@@ -16,7 +16,7 @@ const styles = (
       flexDirection: "row",
       alignItems: "center",
       borderWidth: 1,
-      borderColor: hasError ? "#F24822" : "#393939",
+      borderColor: hasError ? Colors.status.error : Colors.border.primary,
       borderRadius: radius.x5,
       paddingHorizontal: padding.x4,
     },
@@ -36,7 +36,7 @@ const styles = (
       padding: 0,
       paddingLeft: !hasLeftIcon ? padding.x2 : 0,
       flex: 1,
-      color: editable ? "#FFFFFF" : "#777777",
+      color: editable ? Colors.text.primary : Colors.text.disabled,
       marginRight: gap.x2,
     },
     rowIconContainer: {

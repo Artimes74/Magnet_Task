@@ -2,7 +2,7 @@ import React from "react";
 import { Pressable, View } from "react-native";
 import FastImage, { Source } from "react-native-fast-image";
 
-import { AVATAR_SIZE } from "theme";
+import { AVATAR_SIZE, Colors } from "theme";
 import DefaultAvatar from "assets/images/default-avatar.png";
 
 import Icon from "../Icon";
@@ -73,7 +73,7 @@ const Avatar = ({
             },
           ]}
         >
-          <Icon name="plus" size={20} color="white" />
+          <Icon name="plus" size={20} color={Colors.text.primary} />
         </View>
       )}
 
