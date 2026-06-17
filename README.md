@@ -10,9 +10,10 @@ A React Native interview project that demonstrates authentication, friends manag
 
 - Login screen
 - Email and password validation using Zod
-- API integration with ReqRes
+- API integration with a custom Node.js backend
 - Loading and error states
 - Navigation after successful login
+- JWT-based authentication flow
 
 👥 Friends Screen
 
@@ -43,6 +44,38 @@ Reusable component architecture including:
 
 - React Hook Form
 - Zod Validation
+
+⸻
+
+🔑 Demo Credentials
+
+Use the following credentials to access the application:
+
+Email
+
+artimes.geraami@gmail.com
+
+Password
+
+Aa123456@
+
+These credentials are connected to the hosted backend and can be used to test the complete authentication and friends-management flow.
+
+⸻
+
+🔗 Backend Repository
+
+Backend GitHub Repository:
+
+https://github.com/Artimes74/Magnet_Task_BK.git
+
+The backend provides:
+
+- Authentication
+- JWT Token Management
+- User Profile APIs
+- Friends Management APIs
+- Secure HTTPS Communication
 
 ⸻
 
@@ -77,6 +110,9 @@ Zod Validation
 Jest Unit Testing
 React Native Testing Library Component Testing
 Detox End-to-End Testing
+Node.js Backend
+Express.js API Layer
+JWT Authentication
 
 ⸻
 
@@ -200,7 +236,7 @@ React Hook Form and Zod are used together to provide:
 
 Testing Strategy
 
-The project includes multiple levels of testing:
+The project includes multiple levels of testing.
 
 Unit Tests
 
@@ -219,8 +255,9 @@ Detox is used to validate the critical user journey and ensure the application b
 
 📌 Assumptions
 
-- ReqRes is used as the authentication provider for the interview task.
-- The login flow uses the test credentials provided by ReqRes.
+- A custom Node.js backend is used for authentication and data management.
+- Authentication is implemented using JWT.
+- The provided demo credentials can be used to test the complete application flow.
 - The focus of the task is frontend architecture, maintainability, user experience, and testing.
 - iOS Detox E2E testing is fully configured and verified.
 - Android E2E testing can be configured if required.
@@ -230,8 +267,10 @@ Detox is used to validate the critical user journey and ensure the application b
 ✅ Submission Checklist
 
 - Complete source code included
+- Backend repository included
 - Project setup instructions included
 - Application run instructions included
+- Demo credentials included
 - Unit test instructions included
 - E2E test instructions included
 - Architectural decisions documented
