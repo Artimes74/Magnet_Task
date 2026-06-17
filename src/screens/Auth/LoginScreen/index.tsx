@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { View } from "react-native";
 import { zodResolver } from "@hookform/resolvers/zod";
+import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { View } from "react-native";
 
 import {
   MagnetButton,
@@ -9,22 +9,14 @@ import {
   MagnetKeyboardAccessory,
   Screen,
 } from "components";
-import {
-  LoginFormValues,
-  loginSchema,
-  setCredentials,
-  useLogin,
-} from "features";
-import { useAppDispatch } from "store";
+import { LoginFormValues, loginSchema, useLogin } from "features";
 
-import styles from "./styles";
 import { Colors } from "theme/colors";
+import styles from "./styles";
 
 const LoginScreen = () => {
   const [loginError, setLoginError] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState<boolean>(false);
-
-  const dispatch = useAppDispatch();
 
   const { mutate, isPending, isError, error } = useLogin();
 

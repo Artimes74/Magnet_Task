@@ -20,12 +20,22 @@ DerivedData/
 *.xcuserstate
 
 # Android
+android/.cxx/
+android/app/.cxx/
+android/app/debug/
+android/app/release/
+android/app/outputs/
+android/app/intermediates/
+android/app/generated/
+android/.kotlin/
+android/app/.kotlin/
 android/app/build/
 android/build/
 android/.gradle/
 android/local.properties
 *.keystore
 *.jks
+
 
 # Node
 node_modules/
