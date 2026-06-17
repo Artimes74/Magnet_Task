@@ -35,6 +35,13 @@ android/.gradle/
 android/local.properties
 *.keystore
 *.jks
+compile_commands.json
+.cxx/
+**/.cxx/
+externalNativeBuild/
+.cxx/
+**/.cxx/
+**/compile_commands.json
 
 
 # Node
