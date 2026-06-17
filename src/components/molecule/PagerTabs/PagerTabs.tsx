@@ -17,6 +17,8 @@ const PagerTabs = <T extends string, ItemT>({
   onPageChange,
   progress,
   pagerRef,
+  skeletonRender,
+  isLoading = false,
 }: PagerTabsProps<T, ItemT>) => {
   const insets = useSafeAreaInsets();
 
@@ -41,28 +43,31 @@ const PagerTabs = <T extends string, ItemT>({
       scrollEnabled={false}
       onPageSelected={handlePageSelected}
     >
-      {tabs.map((tab, index) => (
-        <View key={`${tab.value}-${index}`} style={styles.page}>
-          <FlatList
-            data={tab.data}
-            renderItem={renderItem}
-            keyExtractor={keyExtractor}
-            bounces={false}
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={{
-              paddingTop: padding.x2,
-              paddingBottom: Math.max(insets.bottom + 42, 36),
-              gap: gap.x4,
-            }}
-            initialNumToRender={8}
-            maxToRenderPerBatch={8}
-            windowSize={10}
-            removeClippedSubviews={false}
-            onScrollBeginDrag={closeOpenedSwipeable}
-            onMomentumScrollBegin={closeOpenedSwipeable}
-          />
-        </View>
-      ))}
+      {isLoading
+        ? skeletonRender
+        : tabs.map((tab, index) => (
+            <View key={`${tab.value}-${index}`} style={styles.page}>
+              <FlatList
+                data={tab.data}
+                renderItem={renderItem}
+                keyExtractor={keyExtractor}
+                bounces={false}
+                scrollEnabled={!isLoading}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{
+                  paddingTop: padding.x2,
+                  paddingBottom: Math.max(insets.bottom + 42, 36),
+                  gap: gap.x4,
+                }}
+                initialNumToRender={8}
+                maxToRenderPerBatch={8}
+                windowSize={10}
+                removeClippedSubviews={false}
+                onScrollBeginDrag={closeOpenedSwipeable}
+                onMomentumScrollBegin={closeOpenedSwipeable}
+              />
+            </View>
+          ))}
     </PagerView>
   );
 };

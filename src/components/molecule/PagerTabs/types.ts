@@ -1,5 +1,5 @@
-import type { ListRenderItem } from 'react-native';
-import type { SharedValue } from 'react-native-reanimated';
+import type { ListRenderItem } from "react-native";
+import type { SharedValue } from "react-native-reanimated";
 
 export interface PagerTabItem<T extends string, ItemT> {
   label: string;
@@ -15,4 +15,6 @@ export interface PagerTabsProps<T extends string, ItemT> {
   onPageChange: (index: number) => void;
   progress: SharedValue<number>;
   pagerRef?: React.RefObject<any>;
+  skeletonRender?: React.ReactNode;
+  isLoading?: boolean;
 }

@@ -4,6 +4,12 @@ export interface Story {
   avatar: string;
 }
 
+export enum Section {
+  Mates = "Mates",
+  Request = "Request",
+  Pending = "Pending",
+}
+
 export interface Mate {
   id: number;
   name: string;
@@ -11,7 +17,7 @@ export interface Mate {
   isFavorite: boolean;
   isOnline: boolean;
   isVip: boolean;
-  section: "Mates" | "Request" | "Pending";
+  section: Section.Mates;
 }
 
 export interface Request {
@@ -21,7 +27,7 @@ export interface Request {
   timeOfRequested: string;
   isFavorite: boolean;
   isVip: boolean;
-  section: "Mates" | "Request" | "Pending";
+  section: Section.Request;
 }
 
 export interface Pending {
@@ -31,7 +37,7 @@ export interface Pending {
   timeOfRequested: string;
   isVip: boolean;
   isFavorite: boolean;
-  section: "Mates" | "Request" | "Pending";
+  section: Section.Pending;
 }
 
 export interface FriendsResponse {
@@ -39,8 +45,4 @@ export interface FriendsResponse {
   mates: Mate[];
   requests: Request[];
   pending: Pending[];
-}
-
-export interface RequestActionPayload {
-  requestId: number;
 }

@@ -41,17 +41,8 @@ const LoginScreen = () => {
 
   const onSubmit = (data: LoginFormValues) => {
     mutate(data, {
-      onSuccess: (response) => {
-        dispatch(
-          setCredentials({
-            token: response.token,
-          }),
-        );
-      },
-
-      onError: (error) => {
+      onError: () => {
         setLoginError("Wrong Input");
-        console.log({ error });
       },
     });
   };
