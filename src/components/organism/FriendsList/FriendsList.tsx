@@ -8,11 +8,13 @@ import { MagnetSegmentedTabs, MagnetPagerTabs } from "../../molecule";
 import styles from "./styles";
 import type { FriendsListProps } from "./types";
 import { padding } from "../../../theme/primitive";
+import FriendSkeleton from "./FriendSkeleton";
 
 const FriendsList = <T extends string, ItemT>({
   tabs,
   renderItem,
   keyExtractor,
+  isLoading,
 }: FriendsListProps<T, ItemT>) => {
   const pagerRef = useRef<PagerView>(null);
 
@@ -63,6 +65,8 @@ const FriendsList = <T extends string, ItemT>({
         keyExtractor={keyExtractor}
         progress={progress}
         onPageChange={handlePageChange}
+        isLoading={isLoading}
+        skeletonRender={<FriendSkeleton />}
       />
     </View>
   );

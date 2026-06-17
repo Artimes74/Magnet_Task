@@ -16,8 +16,6 @@ export const setupApiInterceptors = (store: AppStore) => {
     const state = store.getState() as RootState;
     const token = state.auth.token;
 
-    console.log("TOKEN =>", token);
-
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }

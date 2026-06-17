@@ -13,11 +13,11 @@ import {
   PagerTabItem,
   Screen,
 } from "components";
-import { useFriends } from "features";
+import { Section, useFriends } from "features";
 
+import { Colors, size } from "theme";
 import styles from "./styles";
 import { FriendsPagerItem, FriendsPagerKey } from "./types";
-import { AVATAR_SIZE, Colors, gap, padding, size } from "theme";
 
 const ChatListScreen = () => {
   const [searchText, setSearchText] = useState("");
@@ -69,14 +69,13 @@ const ChatListScreen = () => {
 
   return (
     <Screen
-      // testID="friends-screen"
       parentType="View"
       edges={["bottom"]}
       style={styles.container}
       hasPaddingHorizontal={false}
     >
       <View testID="friends-screen" style={{ flex: 1 }}>
-        <MagnetStoryList data={data?.stories ?? []} />
+        <MagnetStoryList data={data?.stories ?? []} isLoading={isLoading} />
 
         <MagnetSearchBar
           onChangeText={onChangeText}
@@ -104,10 +103,11 @@ const ChatListScreen = () => {
         <MagnetFriendsList
           tabs={filteredTabs}
           keyExtractor={(_, index) => index.toString()}
+          isLoading={isLoading}
           renderItem={({ item }) => {
             return (
               <MagnetSwipeableListItem
-                enabled={item.section === "Mates"}
+                enabled={item.section === Section.Mates}
                 RightAction={
                   <MagnetIcon
                     name="more"
@@ -120,14 +120,7 @@ const ChatListScreen = () => {
                   title={item.name}
                   hasIconInTitle={item.isVip}
                   StartComponent={
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: gap.x3,
-                      }}
-                    >
+                    <View style={styles.startComponentStyle}>
                       {item?.isFavorite ? (
                         <MagnetIcon
                           name={"favorite-button-whitout-prototype"}
@@ -135,105 +128,68 @@ const ChatListScreen = () => {
                           color="#C29EFF"
                         />
                       ) : (
-                        <View style={{ width: size.x5, height: size.x5 }} />
+                        <View style={styles.blockSpace} />
                       )}
                       <MagnetAvatar
                         variant="list"
                         uri={item.avatar}
                         isOnline={"isOnline" in item ? item.isOnline : false}
-                        hasBorder={item.section === "Mates" ? true : false}
+                        hasBorder={
+                          item.section === Section.Mates ? true : false
+                        }
                       />
                     </View>
                   }
                   EndComponent={
-                    item.section === "Mates" ? (
+                    item.section === Section.Mates ? (
                       <MagnetIcon
                         name="message-circle-lines"
                         size={size.x6}
                         color={Colors.button.primaryLight}
                       />
-                    ) : item.section === "Request" ? (
+                    ) : item.section === Section.Request ? (
                       <View>
-                        <Text
-                          style={{
-                            color: Colors.text.disabled,
-                            textAlign: "right",
-                            marginBottom: gap.x1,
-                            marginRight: gap.x1,
-                          }}
-                        >
+                        <Text style={styles.endComponentRequestTimeStyle}>
                           13:20 AM
                         </Text>
-                        <View style={{ flexDirection: "row", gap: gap.x1 }}>
+                        <View
+                          style={
+                            styles.endComponentRequestButtonsContainerStyle
+                          }
+                        >
                           <MagnetButton
                             type="Text"
-                            style={{
-                              borderWidth: 1,
-                              borderColor: Colors.button.primaryLight,
-                            }}
+                            style={styles.endComponentRequestDeclineButton}
                             title="Decline"
-                            titleStyle={{
-                              color: Colors.text.primary,
-                              paddingVertical: padding.x1,
-                              paddingHorizontal: padding.x3,
-                            }}
+                            titleStyle={
+                              styles.endComponentRequestDeclineButtonText
+                            }
                           />
                           <MagnetButton
                             type="Text"
-                            style={{
-                              backgroundColor: Colors.button.primaryLight,
-                            }}
+                            style={styles.endComponentRequestAcceptButton}
                             title="Accept"
-                            titleStyle={{
-                              color: Colors.background.primary,
-                              paddingVertical: padding.x1,
-                              paddingHorizontal: padding.x3,
-                            }}
+                            titleStyle={
+                              styles.endComponentRequestAcceptButtonText
+                            }
                           />
                         </View>
                       </View>
                     ) : (
                       <View>
-                        <View
-                          style={{
-                            flexDirection: "row",
-                            justifyContent: "flex-end",
-                            alignItems: "center",
-                            gap: gap.x1,
-                            marginBottom: gap.x1,
-                          }}
-                        >
-                          <View
-                            style={{
-                              top: AVATAR_SIZE["list"] * 0,
-                              right: AVATAR_SIZE["list"] * 0,
-                              width: AVATAR_SIZE["list"] * 0.1,
-                              height: AVATAR_SIZE["list"] * 0.1,
-                              borderRadius: AVATAR_SIZE["list"] * 0.1,
-                              backgroundColor: Colors.button.primaryLight,
-                            }}
-                          />
-                          <Text
-                            style={{
-                              color: Colors.text.disabled,
-                              marginRight: gap.x1,
-                            }}
-                          >
+                        <View style={styles.endComponentPendingContainerStyle}>
+                          <View style={styles.endComponentPendingBulletPoint} />
+                          <Text style={styles.endComponentPendingTimeText}>
                             13:20 AM
                           </Text>
                         </View>
                         <MagnetButton
                           type="Text"
-                          style={{
-                            borderWidth: 1,
-                            borderColor: Colors.button.primaryLight,
-                          }}
+                          style={styles.endComponentPendingCancelButton}
                           title="Cancel Request"
-                          titleStyle={{
-                            color: Colors.text.primary,
-                            paddingVertical: padding.x1,
-                            paddingHorizontal: padding.x3,
-                          }}
+                          titleStyle={
+                            styles.endComponentPendingCancelButtonText
+                          }
                         />
                       </View>
                     )
