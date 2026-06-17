@@ -10,6 +10,7 @@ const FriendSkeleton = () => {
   function item(_: any, index: number): ReactNode {
     return (
       <View
+        key={index}
         style={{
           width: "100%",
           flexDirection: "row",

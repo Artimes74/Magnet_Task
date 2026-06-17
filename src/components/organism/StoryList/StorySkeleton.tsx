@@ -10,6 +10,7 @@ const StorySkeleton = () => {
   function item(_: any, index: number): ReactNode {
     return (
       <MagnetSkeleton
+        key={index}
         width={AVATAR_SIZE.story}
         height={AVATAR_SIZE.story}
         borderRadius={AVATAR_SIZE.story * 0.32 - 3}
